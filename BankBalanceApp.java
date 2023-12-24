@@ -75,7 +75,7 @@ public class BankBalanceApp {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    double depositAmount = Double.parseDouble(JOptionPane.showInputDialog(panel, "Enter deposit amount:"));
+                    double depositAmount = Double.parseDouble(JOptionPane.showInputDialog(panel, "Current Balance: $" + balance + ". Enter deposit amount:"));
                     balance += depositAmount;
                     updateBalanceLabel();
                 } catch (NumberFormatException ex) {
@@ -88,7 +88,7 @@ public class BankBalanceApp {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    double withdrawalAmount = Double.parseDouble(JOptionPane.showInputDialog(panel, "Enter withdrawal amount:"));
+                    double withdrawalAmount = Double.parseDouble(JOptionPane.showInputDialog(panel, "Current Balance: $" + balance + ". Enter withdrawal amount:"));
                     if (withdrawalAmount > balance) {
                         JOptionPane.showMessageDialog(panel, "Insufficient funds.");
                     } else {
